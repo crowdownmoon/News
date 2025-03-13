@@ -1,0 +1,161 @@
+/* 自定义样式 */
+:root {
+    --primary-color: #6D28D9; /* 紫色 */
+    --secondary-color: #4338CA; /* 靛蓝色 */
+    --accent-color: #EC4899; /* 粉色 */
+    --text-color: #1F2937; /* 深灰色 */
+    --light-bg: #F9FAFB; /* 浅灰背景 */
+    --dark-bg: #111827; /* 深色背景 */
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* 内容区域样式 */
+.content-section {
+    margin-bottom: 4rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 卡片悬停效果 */
+.feature-card {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* 代码块样式 */
+pre {
+    background-color: #1E293B;
+    color: #E5E7EB;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+/* 引用样式 */
+blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    font-style: italic;
+    color: #4B5563;
+    margin: 1.5rem 0;
+}
+
+/* 图片样式 */
+.article-image {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    max-width: 100%;
+    height: auto;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding: 0.75rem;
+}
+
+td {
+    border: 1px solid #E5E7EB;
+    padding: 0.75rem;
+}
+
+tr:nth-child(even) {
+    background-color: #F3F4F6;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.875rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    nav, footer, .no-print {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        color: black;
+        background-color: white;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    pre, blockquote {
+        page-break-inside: avoid;
+    }
+} 

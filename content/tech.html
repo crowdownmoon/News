@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>核心技术创新：混合推理引擎</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+        }
+        .article-image {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            max-width: 100%;
+            height: auto;
+            margin: 1.5rem 0;
+        }
+        .comparison-table th {
+            background-color: #6D28D9;
+            color: white;
+            font-weight: bold;
+            text-align: left;
+            padding: 0.75rem;
+        }
+        .comparison-table td {
+            border: 1px solid #E5E7EB;
+            padding: 0.75rem;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #F3F4F6;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="max-w-4xl mx-auto">
+        <p class="text-lg mb-6">
+            Claude 3.7最引人注目的特性是引入了"混合推理引擎"，这一创新架构结合了两种不同的思维模式，使AI能够像人类一样根据任务复杂度灵活切换思考方式。
+        </p>
+
+        <img src="../images/real_hybrid_reasoning_1.png" alt="Claude 3.7 混合推理引擎" class="article-image">
+
+        <h3 class="text-2xl font-bold text-purple-800 mt-8 mb-4">标准思维模式与扩展思维模式</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-blue-700">标准思维模式</h4>
+                </div>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>快速响应，适合日常对话和简单问题</li>
+                    <li>保持高效率，减少等待时间</li>
+                    <li>适用于明确的、结构化的任务</li>
+                    <li>类似于人类的"系统1"直觉思考</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-purple-700">扩展思维模式</h4>
+                </div>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>深度思考，透明地展示推理过程</li>
+                    <li>适合复杂编程和决策分析</li>
+                    <li>详细分解问题的各个组成部分</li>
+                    <li>类似于人类的"系统2"分析思考</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="mb-6">
+            在扩展思维模式下，Claude 3.7会：
+        </p>
+
+        <ol class="list-decimal pl-6 space-y-2 mb-8">
+            <li>详细分解问题的各个组成部分</li>
+            <li>系统性地制定解决方案</li>
+            <li>探索多种可能的解决路径</li>
+            <li>提供对每个决策的详细解释</li>
+        </ol>
+
+        <p class="mb-6">
+            这种双重思维模式使Claude 3.7能够根据任务复杂度自动或手动切换不同的思考方式，类似于人类大脑的运作方式。在Amazon Bedrock等平台上，用户可以通过控制面板直接切换这两种模式，或通过API参数进行设置。
+        </p>
+
+        <h3 class="text-2xl font-bold text-purple-800 mt-8 mb-4">混合推理架构的技术原理</h3>
+
+        <p class="mb-6">
+            Claude 3.7的"混合推理引擎"本质上是一种创新的神经网络架构，它结合了两种不同的处理路径：
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg shadow-md border border-blue-200">
+                <h4 class="text-xl font-semibold text-blue-700 mb-4">快速路径</h4>
+                <p class="mb-4">针对熟悉的模式和简单查询，提供低延迟响应。这一路径优化了处理速度，适合：</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>日常对话和简单问题</li>
+                    <li>信息检索和事实查询</li>
+                    <li>基于模式匹配的任务</li>
+                    <li>需要快速响应的场景</li>
+                </ul>
+            </div>
+
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg shadow-md border border-purple-200">
+                <h4 class="text-xl font-semibold text-purple-700 mb-4">深度路径</h4>
+                <p class="mb-4">针对复杂问题，启动更广泛的神经网络连接，模拟深度思考过程。这一路径适合：</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>复杂编程和代码分析</li>
+                    <li>多步骤推理和问题解决</li>
+                    <li>需要创造性思考的任务</li>
+                    <li>需要详细解释的决策分析</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="mb-8">
+            这种双路径设计使Claude 3.7能够在保持高效率的同时，处理更具挑战性的任务。系统会根据输入的复杂性和用户的设置，动态决定使用哪种处理路径，或者两种路径的组合。
+        </p>
+
+        <h3 class="text-2xl font-bold text-purple-800 mt-8 mb-4">与其他AI模型的比较</h3>
+
+        <table class="comparison-table w-full mb-8">
+            <thead>
+                <tr>
+                    <th>特性</th>
+                    <th>Claude 3.7</th>
+                    <th>传统大语言模型</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>思考模式</td>
+                    <td>双模式（标准+扩展）</td>
+                    <td>单一模式</td>
+                </tr>
+                <tr>
+                    <td>推理透明度</td>
+                    <td>高（可展示思考过程）</td>
+                    <td>低（黑盒输出）</td>
+                </tr>
+                <tr>
+                    <td>资源利用</td>
+                    <td>动态分配（根据任务复杂度）</td>
+                    <td>固定分配</td>
+                </tr>
+                <tr>
+                    <td>复杂任务处理</td>
+                    <td>系统性分解和解决</td>
+                    <td>有限的分步能力</td>
+                </tr>
+                <tr>
+                    <td>用户控制</td>
+                    <td>可调整思考深度和资源</td>
+                    <td>有限的参数调整</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-8">
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">实际应用示例</h4>
+            <p class="mb-4">在Amazon Bedrock平台上，用户可以通过以下方式控制Claude 3.7的思考模式：</p>
+            <pre class="bg-gray-800 text-gray-200 p-4 rounded-md overflow-x-auto">
+{
+  "anthropic_version": "bedrock-2025-02-24",
+  "max_tokens": 1024,
+  "messages": [
+    { "role": "user", "content": "分析这段复杂代码的性能问题" }
+  ],
+  "reasoning_mode": "extended",  // 可选值: "standard" 或 "extended"
+  "reasoning_budget": 0.7        // 0.0-1.0之间的值，控制思考深度
+}
+            </pre>
+        </div>
+
+        <div class="flex justify-center">
+            <img src="../images/real_claude_coding_1.jpg" alt="Claude 3.7 编程应用" class="article-image max-w-2xl">
+        </div>
+    </div>
+</body>
+</html> 

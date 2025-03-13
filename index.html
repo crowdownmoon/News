@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何全面使用Claude 3.7 - 开发者、设计师和内容创作者的终极指南</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 顶部导航 -->
+    <nav class="bg-gradient-to-r from-purple-800 to-indigo-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="./images/real_claude_logo_2.png" alt="Claude 3.7 Logo" class="h-10">
+                <span class="text-xl font-bold">Claude 3.7 指南</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#intro" class="hover:text-purple-200 transition">简介</a>
+                <a href="#tech" class="hover:text-purple-200 transition">核心技术</a>
+                <a href="#dev" class="hover:text-purple-200 transition">开发者指南</a>
+                <a href="#design" class="hover:text-purple-200 transition">设计师指南</a>
+                <a href="#content" class="hover:text-purple-200 transition">内容创作</a>
+                <a href="#prompt" class="hover:text-purple-200 transition">提示词工程</a>
+            </div>
+            <button class="md:hidden text-2xl" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="hidden container mx-auto px-4 py-2 bg-indigo-900 md:hidden" id="mobileMenu">
+            <div class="flex flex-col space-y-2">
+                <a href="#intro" class="hover:text-purple-200 transition py-1">简介</a>
+                <a href="#tech" class="hover:text-purple-200 transition py-1">核心技术</a>
+                <a href="#dev" class="hover:text-purple-200 transition py-1">开发者指南</a>
+                <a href="#design" class="hover:text-purple-200 transition py-1">设计师指南</a>
+                <a href="#content" class="hover:text-purple-200 transition py-1">内容创作</a>
+                <a href="#prompt" class="hover:text-purple-200 transition py-1">提示词工程</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="bg-gradient-to-b from-indigo-900 to-purple-800 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">如何全面使用 Claude 3.7</h1>
+            <p class="text-xl md:text-2xl mb-8">开发者、设计师和内容创作者的终极指南</p>
+            <div class="flex justify-center">
+                <a href="#intro" class="bg-white text-purple-800 hover:bg-purple-100 transition px-6 py-3 rounded-full font-bold shadow-lg">
+                    <i class="fas fa-arrow-down mr-2"></i>开始探索
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- 内容将通过JavaScript动态加载 -->
+        <div id="contentContainer"></div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">关于本指南</h3>
+                    <p>本指南旨在帮助开发者、设计师和内容创作者充分利用Claude 3.7的强大功能，提升工作效率和创作质量。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">相关资源</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-purple-300 transition"><i class="fas fa-external-link-alt mr-2"></i>Claude官方文档</a></li>
+                        <li><a href="#" class="hover:text-purple-300 transition"><i class="fas fa-external-link-alt mr-2"></i>Anthropic博客</a></li>
+                        <li><a href="#" class="hover:text-purple-300 transition"><i class="fas fa-external-link-alt mr-2"></i>提示词工程指南</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">联系我们</h3>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-purple-300 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-purple-300 transition"><i class="fab fa-github"></i></a>
+                        <a href="#" class="hover:text-purple-300 transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-purple-300 transition"><i class="fab fa-weixin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 Claude 3.7 指南 | 使用 Claude 3.7 创建</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html> 
